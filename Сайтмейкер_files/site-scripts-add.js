@@ -138,29 +138,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".sm-email-back.back-2").forEach((item) => {
-    if (
-      document.documentElement.clientHeight / 2 -
-        document.documentElement.clientHeight / 4 <
-        item.getBoundingClientRect().top &&
-      document.documentElement.clientHeight / 2 >
-        item.getBoundingClientRect().top
-    ) {
-      item.style.top =
-        (item.getBoundingClientRect().top -
-          (document.documentElement.clientHeight / 2 -
-            document.documentElement.clientHeight / 4)) *
-          (80 / (document.documentElement.clientHeight / 4)) +
-        "px";
-    } else {
-      $(".item-animation_new:not(.item-active)").toggleClass(
-        "item-active",
-        true,
-      );
-    }
-  });
-});
 window.addEventListener("resize", () => {
   if (!isThrottled) {
     handleScroller();
