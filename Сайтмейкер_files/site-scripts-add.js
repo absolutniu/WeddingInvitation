@@ -8,6 +8,35 @@ function checkVisibilityEr(element, callback, offset = 0) {
 
 $(function () {
   handleScroller();
+  // Run again after layout settles (images/fonts/paint) to avoid
+  // first-pass wrong intersections on mobile Safari/Firefox.
+  requestAnimationFrame(function () {
+    handleScroller();
+  });
+  window.setTimeout(function () {
+    handleScroller();
+  }, 250);
+  window.setTimeout(function () {
+    handleScroller();
+  }, 900);
+
+  if (document.fonts && typeof document.fonts.ready !== "undefined") {
+    document.fonts.ready.then(function () {
+      handleScroller();
+    });
+  }
+
+  window.addEventListener(
+    "load",
+    function () {
+      handleScroller();
+      window.setTimeout(function () {
+        handleScroller();
+      }, 250);
+    },
+    { once: true },
+  );
+
   setTimeout(function () {
     var checkIntro = setInterval(function () {
       if (!$("body").hasClass("opener-active")) {
@@ -132,6 +161,11 @@ window.addEventListener("scroll", () => {
     var upper = vh / 2;
 
     flapLayers.forEach(function (item) {
+      var outer = item.closest(".sm-email-outer");
+      if (outer && outer.classList.contains("item-active")) {
+        item.style.removeProperty("top");
+        return;
+      }
       var top = item.getBoundingClientRect().top;
       if (lower < top && top < upper) {
         item.style.top = (top - lower) * (80 / quarter) + "px";

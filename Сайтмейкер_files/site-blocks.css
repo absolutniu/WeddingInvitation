@@ -558,6 +558,7 @@ section {
   max-width: max-content;
   line-height: 1;
   position: relative;
+  z-index: 3;
 }
 .sm-footer-container {
   width: 92vw;
@@ -594,6 +595,8 @@ section {
 .sm-footer .sm-text {
   margin: 0 auto 20px;
   max-width: 240px;
+  position: relative;
+  z-index: 2;
 }
 .sm-footer .sm-text:has(+ .sm-text) {
   margin-bottom: 0;
@@ -608,6 +611,8 @@ section {
   margin: 0 0 30px;
   max-width: 100%;
   font-family: var(--title-font-family);
+  position: relative;
+  z-index: 2;
 }
 .sm-timing {
   padding: 0;
