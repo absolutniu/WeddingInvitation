@@ -556,12 +556,15 @@ section {
   letter-spacing: -0.05em;
   width: 105%;
   max-width: max-content;
+  line-height: 1;
+  position: relative;
 }
 .sm-footer-container {
   width: 92vw;
   max-width: 580px;
   margin: 0 auto;
   padding: 20px 0 70px;
+  overflow: visible;
 }
 .sm-footer .sm-footer__image {
   position: relative;
@@ -888,7 +891,7 @@ section {
   position: relative;
   width: 440px;
   height: 440px;
-  transform: rotate(-5deg);
+  transform: rotate(-5deg) translateZ(0);
 }
 .sm-email-back {
   width: 440px;
@@ -1595,7 +1598,7 @@ section {
     padding-top: 40px;
   }
   .sm-footer .sm-title {
-    margin-bottom: -15px;
+    margin-bottom: 0.2em;
     margin-left: 8px;
   }
   .sm-thanks .sm-lead-names-content,
@@ -1877,7 +1880,7 @@ section {
     position: relative;
     width: 500px;
     height: 500px;
-    transform: rotate(-5deg);
+    transform: rotate(-5deg) translateZ(0);
   }
   .sm-email-back {
     width: 500px;
@@ -2286,7 +2289,7 @@ section {
     font-weight: 100;
     font-size: 172px;
     text-transform: none;
-    margin-bottom: -30px;
+    margin-bottom: 0.12em;
     max-width: none;
   }
   .sm-form {
@@ -2363,6 +2366,22 @@ section {
   }
   .sm-questionnaire .sm-btn {
     padding-top: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .sm-lead .sm-lead-image,
+  .sm-thanks .sm-lead-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+  .sm-lead .sm-lead-image img,
+  .sm-thanks .sm-lead-image img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: initial;
   }
 }
 .item-animation {
