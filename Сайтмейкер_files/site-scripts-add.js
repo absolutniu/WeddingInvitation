@@ -138,54 +138,29 @@ window.addEventListener("scroll", () => {
   }
 });
 
-(function initEnvelopeFlapParallax() {
-  var flapLayers = document.querySelectorAll(".sm-email-back.back-2");
-  if (!flapLayers.length) {
-    return;
-  }
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    flapLayers.forEach(function (el) {
-      el.style.removeProperty("top");
-    });
-    return;
-  }
-
-  var ticking = false;
-
-  function updateFlap() {
-    ticking = false;
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    var quarter = vh / 4;
-    var lower = vh / 2 - quarter;
-    var upper = vh / 2;
-
-    flapLayers.forEach(function (item) {
-      var outer = item.closest(".sm-email-outer");
-      if (outer && outer.classList.contains("item-active")) {
-        item.style.removeProperty("top");
-        return;
-      }
-      var top = item.getBoundingClientRect().top;
-      if (lower < top && top < upper) {
-        item.style.top = (top - lower) * (80 / quarter) + "px";
-      } else {
-        item.style.removeProperty("top");
-      }
-    });
-  }
-
-  function onScrollOrResize() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(updateFlap);
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".sm-email-back.back-2").forEach((item) => {
+    if (
+      document.documentElement.clientHeight / 2 -
+        document.documentElement.clientHeight / 4 <
+        item.getBoundingClientRect().top &&
+      document.documentElement.clientHeight / 2 >
+        item.getBoundingClientRect().top
+    ) {
+      item.style.top =
+        (item.getBoundingClientRect().top -
+          (document.documentElement.clientHeight / 2 -
+            document.documentElement.clientHeight / 4)) *
+          (80 / (document.documentElement.clientHeight / 4)) +
+        "px";
+    } else {
+      $(".item-animation_new:not(.item-active)").toggleClass(
+        "item-active",
+        true,
+      );
     }
-  }
-
-  window.addEventListener("scroll", onScrollOrResize, { passive: true });
-  window.addEventListener("resize", onScrollOrResize);
-  updateFlap();
-})();
+  });
+});
 window.addEventListener("resize", () => {
   if (!isThrottled) {
     handleScroller();

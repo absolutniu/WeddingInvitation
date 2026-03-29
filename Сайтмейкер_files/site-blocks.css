@@ -896,7 +896,7 @@ section {
   position: relative;
   width: 440px;
   height: 440px;
-  transform: rotate(-5deg) translateZ(0);
+  transform: rotate(-5deg);
 }
 .sm-email-back {
   width: 440px;
@@ -1885,7 +1885,7 @@ section {
     position: relative;
     width: 500px;
     height: 500px;
-    transform: rotate(-5deg) translateZ(0);
+    transform: rotate(-5deg);
   }
   .sm-email-back {
     width: 500px;
