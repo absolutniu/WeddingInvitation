@@ -1,0 +1,234 @@
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-Black.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-Black.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-Black.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-Black.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-ExtraBoldItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-ExtraBoldItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-ExtraBoldItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-ExtraBoldItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-ExtraBoldItalic.ttf) format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-Bold.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-Bold.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-Bold.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-Bold.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-BlackItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-BlackItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-BlackItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-BlackItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-BlackItalic.ttf) format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-BoldItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-BoldItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-BoldItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-BoldItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-BoldItalic.ttf) format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-ExtraBold.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-ExtraBold.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-ExtraBold.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-ExtraBold.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-ExtraBold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-SemiBoldItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-SemiBoldItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-SemiBoldItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-SemiBoldItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-SemiBoldItalic.ttf) format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-Regular.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-Regular.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-Regular.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-Regular.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-ExtraLightItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-ExtraLightItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-ExtraLightItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-ExtraLightItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-ExtraLightItalic.ttf) format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-Medium.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-Medium.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-Medium.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-Medium.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-Light.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-Light.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-Light.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-Light.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-SemiBold.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-SemiBold.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-SemiBold.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-SemiBold.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-LightItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-LightItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-LightItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-LightItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-LightItalic.ttf) format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-ThinItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-ThinItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-ThinItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-ThinItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-ThinItalic.ttf) format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-MediumItalic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-MediumItalic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-MediumItalic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-MediumItalic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-MediumItalic.ttf) format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-Italic.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-Italic.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-Italic.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-Italic.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-Italic.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-Thin.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-Thin.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-Thin.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-Thin.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(/sitemaker/fonts/inter/Inter-ExtraLight.eot);
+  src:
+    url(/sitemaker/fonts/inter/Inter-ExtraLight.eot?#iefix)
+      format("embedded-opentype"),
+    url(/sitemaker/fonts/inter/Inter-ExtraLight.woff2) format("woff2"),
+    url(/sitemaker/fonts/inter/Inter-ExtraLight.woff) format("woff"),
+    url(/sitemaker/fonts/inter/Inter-ExtraLight.ttf) format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
