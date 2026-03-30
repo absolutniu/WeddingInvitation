@@ -66,6 +66,74 @@ forms.forEach((form) => {
   });
 });
 
+// Formspree: отправка через fetch + Accept: application/json — без редиректа на страницу Formspree.
+(function () {
+  const formspreeForm = document.querySelector(
+    'form.sm-form[action*="formspree.io"]',
+  );
+  if (!formspreeForm || !thankYouMessage) {
+    return;
+  }
+
+  formspreeForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const action = formspreeForm.getAttribute("action");
+    if (!action) {
+      return;
+    }
+
+    const submitBtn = formspreeForm.querySelector(
+      'button[type="submit"], input[type="submit"]',
+    );
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
+
+    fetch(action, {
+      method: "POST",
+      body: new FormData(formspreeForm),
+      headers: { Accept: "application/json" },
+    })
+      .then(function (res) {
+        return res.json().catch(function () {
+          return {};
+        }).then(function (data) {
+          if (res.ok) {
+            formspreeForm.reset();
+            thankYouMessage.classList.add("sm-open");
+            body.classList.add("sm-hidde");
+            const q = document.querySelector(".sm-questionnaire");
+            if (q) {
+              q.classList.remove("sm-open");
+            }
+            body.classList.remove("lock");
+            return;
+          }
+          let msg =
+            (data && data.error) ||
+            (data.errors &&
+              Array.isArray(data.errors) &&
+              data.errors
+                .map(function (e) {
+                  return e && (e.message || e.field);
+                })
+                .filter(Boolean)
+                .join(", ")) ||
+            "Не удалось отправить форму. Попробуйте позже.";
+          window.alert(msg);
+        });
+      })
+      .catch(function () {
+        window.alert("Ошибка сети. Проверьте подключение и попробуйте снова.");
+      })
+      .finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+        }
+      });
+  });
+})();
+
 // Netlify RSVP (wedding-rsvp): отправляем форму штатно в Netlify,
 // а после reload показываем модальное "Спасибо".
 const rsvpStorageKey = "sm_rsvp_submitted";
