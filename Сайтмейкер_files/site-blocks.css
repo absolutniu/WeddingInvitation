@@ -1603,8 +1603,30 @@ section {
     padding-top: 40px;
   }
   .sm-footer .sm-title {
-    margin-bottom: 0.2em;
-    margin-left: 8px;
+    margin-bottom: 0.35em;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: var(--alt-font-family);
+    font-weight: 100;
+    font-size: 144px;
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+    text-transform: none;
+    white-space: nowrap;
+  }
+  .sm-footer .sm-footer-container {
+    width: 100%;
+    max-width: 580px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
   .sm-thanks .sm-lead-names-content,
   .sm-thanks .sm-title {
