@@ -360,80 +360,83 @@
                 </div>
             </div>
             <div class="sm-questionnaire-form item-animation item-atop">
-                <!-- Добавлены атрибуты Netlify -->
-                <form class="sm-form background-paint-background" name="wedding-rsvp" method="POST" data-netlify="true">
-                    <!-- Скрытое поле для работы Netlify Forms -->
-                    <input type="hidden" name="form-name" value="wedding-rsvp" />
-    
+             
+                <form class="sm-form background-paint-background" action="https://formspree.io" method="POST">
+                    
+                
+            
                     <div class="sm-form__block">
                         <div class="sm-form__block__title">Ваше имя и фамилия</div>
-                        <input class="sm-form__input" type="text" name="Имя гостя" placeholder="Имя и Фамилия" required>
+                    
+                        <input class="sm-form__input" type="text" name="guest_name" placeholder="Имя и Фамилия" required>
                     </div>
-    
+            
                     <div class="sm-form__block">
                         <div class="sm-form__block__title">Планируете ли вы присутствовать?</div>
                         <div class="sm-form__item">
                             <label class="sm-form_checkbox">
-                                <input class="sm-form_checkbox_input" type="radio" name="Присутствие" value="Приду" id="choice1" required>
+                                <input class="sm-form_checkbox_input" type="radio" name="attendance" value="Приду" id="choice1" required>
                                 <span class="sm-form_checkbox_box"></span>
                                 <span>С удовольствием приду!</span>
                             </label>
                             <label class="sm-form_checkbox">
-                                <input class="sm-form_checkbox_input" type="radio" name="Присутствие" value="Не смогу" id="choice2">
+                                <input class="sm-form_checkbox_input" type="radio" name="attendance" value="Не смогу" id="choice2">
                                 <span class="sm-form_checkbox_box"></span>
                                 <span>К сожалению, не смогу</span>
                             </label>
                         </div>
                     </div>
-    
+            
                     <div class="sm-form__block">
                         <div class="sm-form__block__title">Если вы будете не одни, заполните поле ниже</div>
-                        <input class="sm-form__input" type="text" name="Спутник" placeholder="Имя и фамилия вашего спутника/спутницы">
+                        <input class="sm-form__input" type="text" name="plus_one" placeholder="Имя и фамилия вашего спутника/спутницы">
                     </div>
-    
+            
                     <div class="sm-form__block">
                         <div class="sm-form__block__title">Ваши предпочтения (напитки)</div>
                         <div class="sm-form__drinks">
                             <div class="sm-form__drinks-check">
+                                <!-- Чтобы пришло несколько напитков, добавьте [] к имени (drinks[]) -->
                                 <label class="sm-form_checkbox">
-                                    <input class="sm-form_checkbox_input" type="checkbox" name="Напитки" value="Шампанское">
+                                    <input class="sm-form_checkbox_input" type="checkbox" name="drinks[]" value="Шампанское">
                                     <span class="sm-form_checkbox_box"></span>
                                     <div>Шампанское</div>
                                 </label>
                                 <label class="sm-form_checkbox">
-                                    <input class="sm-form_checkbox_input" type="checkbox" name="Напитки" value="Белое вино">
+                                    <input class="sm-form_checkbox_input" type="checkbox" name="drinks[]" value="Белое вино">
                                     <span class="sm-form_checkbox_box"></span>
                                     <div>Белое вино</div>
                                 </label>
                                 <label class="sm-form_checkbox">
-                                    <input class="sm-form_checkbox_input" type="checkbox" name="Напитки" value="Красное вино">
+                                    <input class="sm-form_checkbox_input" type="checkbox" name="drinks[]" value="Красное вино">
                                     <span class="sm-form_checkbox_box"></span>
                                     <div>Красное вино</div>
                                 </label>
                                 <label class="sm-form_checkbox">
-                                    <input class="sm-form_checkbox_input" type="checkbox" name="Напитки" value="Виски">
+                                    <input class="sm-form_checkbox_input" type="checkbox" name="drinks[]" value="Виски">
                                     <span class="sm-form_checkbox_box"></span>
                                     <div>Виски</div>
                                 </label>
                                 <label class="sm-form_checkbox">
-                                    <input class="sm-form_checkbox_input" type="checkbox" name="Напитки" value="Джин">
+                                    <input class="sm-form_checkbox_input" type="checkbox" name="drinks[]" value="Джин">
                                     <span class="sm-form_checkbox_box"></span>
                                     <div>Джин</div>
                                 </label>
                                 <label class="sm-form_checkbox">
-                                    <input class="sm-form_checkbox_input" type="checkbox" name="Напитки" value="Не пью алкоголь">
+                                    <input class="sm-form_checkbox_input" type="checkbox" name="drinks[]" value="Не пью алкоголь">
                                     <span class="sm-form_checkbox_box"></span>
                                     <div>Не пью алкоголь</div>
                                 </label>
                             </div>
                         </div>
                     </div>
-    
+            
                     <div class="sm-form__block sm-form__block-submit">
                         <button type="submit" class="sm-btn text-paint-text text-paint-border">Подтвердить</button>
                     </div>
                 </form>
             </div>
+            
         </div>
     </section>
     <!-- /section -->
