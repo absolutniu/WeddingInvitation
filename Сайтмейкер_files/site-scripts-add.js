@@ -1,4 +1,5 @@
 let isThrottled = false;
+let scrollRafScheduled = false;
 function checkVisibilityEr(element, callback, offset = 0) {
   const rect = element.getBoundingClientRect();
   const isVisible =
@@ -8,43 +9,18 @@ function checkVisibilityEr(element, callback, offset = 0) {
 
 $(function () {
   handleScroller();
-  // Run again after layout settles (images/fonts/paint) to avoid
-  // first-pass wrong intersections on mobile Safari/Firefox.
-  requestAnimationFrame(function () {
-    handleScroller();
-  });
-  window.setTimeout(function () {
-    handleScroller();
-  }, 250);
-  window.setTimeout(function () {
-    handleScroller();
-  }, 900);
-
-  if (document.fonts && typeof document.fonts.ready !== "undefined") {
-    document.fonts.ready.then(function () {
-      handleScroller();
-    });
-  }
+  // Lightweight second pass after first paint.
+  requestAnimationFrame(handleScroller);
+  window.setTimeout(handleScroller, 220);
 
   window.addEventListener(
     "load",
     function () {
       handleScroller();
-      window.setTimeout(function () {
-        handleScroller();
-      }, 250);
+      window.setTimeout(handleScroller, 220);
     },
     { once: true },
   );
-
-  setTimeout(function () {
-    var checkIntro = setInterval(function () {
-      if (!$("body").hasClass("opener-active")) {
-        handleScroller();
-        clearInterval(checkIntro);
-      }
-    }, 500);
-  }, 1000);
 
   // Fallback timer (if StartCountDown from templates doesn't tick for any reason)
   // Shows correct countdown values in #days/#hours/#minutes/#seconds.
@@ -128,49 +104,36 @@ $(function () {
     }
   }
 });
+
+function scheduleHandleScroller() {
+  if (scrollRafScheduled) return;
+  scrollRafScheduled = true;
+  window.requestAnimationFrame(function () {
+    scrollRafScheduled = false;
+    handleScroller();
+  });
+}
+
 window.addEventListener("scroll", () => {
   if (!isThrottled) {
-    handleScroller();
+    scheduleHandleScroller();
     isThrottled = true;
     setTimeout(() => {
       isThrottled = false;
     }, 100);
   }
-});
+}, { passive: true });
 
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".sm-email-back.back-2").forEach((item) => {
-    if (
-      document.documentElement.clientHeight / 2 -
-        document.documentElement.clientHeight / 4 <
-        item.getBoundingClientRect().top &&
-      document.documentElement.clientHeight / 2 >
-        item.getBoundingClientRect().top
-    ) {
-      item.style.top =
-        (item.getBoundingClientRect().top -
-          (document.documentElement.clientHeight / 2 -
-            document.documentElement.clientHeight / 4)) *
-          (80 / (document.documentElement.clientHeight / 4)) +
-        "px";
-    } else {
-      $(".item-animation_new:not(.item-active)").toggleClass(
-        "item-active",
-        true,
-      );
-    }
-  });
-});
 window.addEventListener("resize", () => {
   if (!isThrottled) {
-    handleScroller();
+    scheduleHandleScroller();
 
     isThrottled = true;
     setTimeout(() => {
       isThrottled = false;
     }, 100);
   }
-});
+}, { passive: true });
 
 function handleScroller() {
   if (!$("body").hasClass("opener-active")) {
