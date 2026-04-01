@@ -1,3 +1,33 @@
+// Startup loader: keep first-paint smooth while assets/layout settle.
+(function initStartupLoader() {
+  const loader = document.querySelector(".sm-loader_wrapper");
+  if (!loader) return;
+
+  let done = false;
+  function hideLoader() {
+    if (done) return;
+    done = true;
+    loader.classList.add("is-hidden");
+    window.setTimeout(function () {
+      loader.style.display = "none";
+    }, 420);
+  }
+
+  // Fallback in case some asset hangs.
+  window.setTimeout(hideLoader, 4500);
+
+  window.addEventListener(
+    "load",
+    function () {
+      // Let one extra frame pass after onload to avoid visual snap.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(hideLoader);
+      });
+    },
+    { once: true },
+  );
+})();
+
 // Модальное окно
 $(".open-modal").click(function () {
   $(".sm-questionnaire").addClass("sm-open");
