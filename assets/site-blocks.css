@@ -2425,7 +2425,25 @@ section {
     padding-top: 0;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 501px) and (max-width: 1024px) {
+  /* Prevent horizontal overflow on tablet:
+     on >=501px a fixed 850px width was applied to block titles. */
+  .sm-questionnaire .sm-box,
+  .sm-questionnaire-form,
+  .sm-questionnaire.sm-modal {
+    overflow-x: hidden;
+  }
+
+  .sm-form .sm-form__block__title {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .sm-form .sm-form__form {
+    max-width: 100%;
+  }
+}
+@media (max-width: 501px) {
   .sm-lead .sm-lead-image,
   .sm-thanks .sm-lead-image {
     width: 100%;

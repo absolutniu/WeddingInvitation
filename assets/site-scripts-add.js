@@ -182,12 +182,36 @@ function handleScroller() {
   }
 }
 
-$(".sm-form_checkbox_box").on("click", function () {
-  const $radio = $(this).prev(".sm-form_checkbox_input");
-  if ($radio.attr("type") === "radio") {
-    $radio.prop("checked", true);
-  } else if ($radio.attr("type") === "checkbox") {
-    $radio.prop("checked", !$radio.prop("checked"));
+$(".sm-form_checkbox_box").on("click", function (event) {
+  // Prevent double-toggle:
+  // - browser toggles the underlying <input> because it's inside <label>
+  // - our previous handler also toggled it => ended up unchanged state.
+  event.preventDefault();
+  event.stopPropagation();
+
+  const $input = $(this).prev(".sm-form_checkbox_input");
+  if (!$input.length) return;
+
+  const type = ($input.attr("type") || "").toLowerCase();
+  if (type === "radio") {
+    const name = $input.attr("name");
+    const $form = $input.closest("form");
+    if (name && $form.length) {
+      $form
+        .find('input.sm-form_checkbox_input[type="radio"]')
+        .filter(function () {
+          return this.name === name && this !== $input[0];
+        })
+        .prop("checked", false);
+    }
+    $input.prop("checked", true).trigger("change");
+    return;
+  }
+
+  if (type === "checkbox") {
+    $input
+      .prop("checked", !$input.prop("checked"))
+      .trigger("change");
   }
 });
 
